@@ -6,17 +6,21 @@ namespace GenericTest
 {
     class MaxOfNumber
     {
-        public int Max(int a,int b,int c)
+        public string Max(string firstValue,string secondValue,string thirdValue)
         {
-            if (a > b && a > c)
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
+                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
+                 firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
-                return a;
+                return(firstValue);
             }
-            if (b > c && b > c)
-            { 
-                return b; 
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
+            {
+                return(secondValue);
             }
-            return c;
+                return(thirdValue);
         }
     }
 }
